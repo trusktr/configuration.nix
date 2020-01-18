@@ -61,6 +61,7 @@
   # $ nix search <term>
   # CUSTOMIZED
   environment.systemPackages = with pkgs; [
+    nixfmt
     #zsh
 
     vim
