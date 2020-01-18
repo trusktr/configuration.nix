@@ -61,9 +61,7 @@
   # $ nix search <term>
   # CUSTOMIZED
   environment.systemPackages = with pkgs; [
-    wget
-    curl
-    git
+    #zsh
 
     vim
     neovim
@@ -73,13 +71,16 @@
     fzy
     fd
 
-    libnotify
-    zsh
-    gimp
-    zeromq
     gnome3.meld
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
+
+    wget
+    curl
+    git
+    libnotify
+    gimp
+    zeromq
     xvfb_run
     htop
     blender
@@ -93,6 +94,9 @@
     # VS Code without proprietary MS stuff, https://nixos.wiki/wiki/Vscode
     vscodium
   ];
+
+  #ADDED
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -123,7 +127,7 @@
   services.xserver.enable = true; # CUSTOMIZED
   services.xserver.layout = "us"; # CUSTOMIZED
   # services.xserver.xkbOptions = "eurosign:e";
-  # services.xserver.xkbOptions = "ctrl:swapcaps"; Doesn't seem to work, so instead we set it in gnome-tweak-tool for now.
+  # services.xserver.xkbOptions = "ctrl:swapcaps"; # ADDED Doesn't seem to work, so instead we set it in gnome-tweak-tool for now.
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true; # CUSTOMIZED
