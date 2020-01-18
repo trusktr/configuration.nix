@@ -71,6 +71,8 @@
       fzy
       fd
 
+    firefox
+
     gnome3.meld
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
@@ -87,8 +89,6 @@
     #slack # broken, causes bug: https://discourse.nixos.org/t/5477
     #spotify
     file # file command for getting info about a file
-    # see https://nixos.wiki/wiki/Chromium
-    chromium firefox
     # Node.js, https://nixos.wiki/wiki/Node.js
     nodejs_latest
     # VS Code without proprietary MS stuff, https://nixos.wiki/wiki/Vscode
@@ -97,6 +97,7 @@
 
   #ADDED
   programs.zsh.enable = true;
+  programs.chromium.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
