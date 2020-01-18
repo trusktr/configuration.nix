@@ -73,6 +73,7 @@
       fd
 
     firefox
+    chromium
 
     gnome3.meld
     gnome3.gnome-tweak-tool
