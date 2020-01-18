@@ -145,11 +145,17 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # CUSTOMIZED
-  users.users.trusktr = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
+  users = {
+    users = {
+      trusktr = {
+        isNormalUser = true;
+        extraGroups = [ "wheel" "networkmanager" "adbusers" ]; # Enable ‘sudo’ for the user.
+        #shell = pkgs.zsh;
+      };
+    };
+    defaultUserShell = pkgs.zsh;
   };
+
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
