@@ -62,15 +62,14 @@
   # CUSTOMIZED
   environment.systemPackages = with pkgs; [
     nixfmt
-    #zsh
 
     vim
     neovim
     python37Packages.pynvim
     # needed by fzf or ctrlp (neo)vim plugins
-    ripgrep
-    fzy
-    fd
+      ripgrep
+      fzy
+      fd
 
     gnome3.meld
     gnome3.gnome-tweak-tool
