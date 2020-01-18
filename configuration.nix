@@ -12,6 +12,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # slient boot
+  boot.plymouth.enable = true;
+
   networking = {
     hostName = "starnix";
     networkmanager.enable = true;
