@@ -118,7 +118,7 @@
   networking.firewall.enable = false; # CUSTOMIZED
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true; # CUSTOMIZED
 
   # Enable sound.
   # CUSTOMIZED
