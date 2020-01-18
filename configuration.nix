@@ -130,7 +130,7 @@
   services.xserver.enable = true; # CUSTOMIZED
   services.xserver.layout = "us"; # CUSTOMIZED
   # services.xserver.xkbOptions = "eurosign:e";
-  # services.xserver.xkbOptions = "ctrl:swapcaps"; # ADDED Doesn't seem to work, so instead we set it in gnome-tweak-tool for now.
+  services.xserver.xkbOptions = "ctrl:swapcaps"; # ADDED
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true; # CUSTOMIZED
