@@ -57,6 +57,11 @@
   environment.systemPackages = with pkgs; [
     nixfmt
 
+    # sources .envrc files if present when entering a directory (if explicitly
+    # allowed for that directory).
+    # Nix lorri uses this to automatically run a nix-shell based on shell.nix.
+    direnv
+
     vim
     neovim
     python37Packages.pynvim
@@ -71,6 +76,10 @@
     gnome3.meld
     gnome3.gnome-tweak-tool
     gnome3.dconf-editor
+    gnome3.gnome-shell-extensions
+
+    # needed to connect to Velodyne's GlobalProtect VPN 
+    openconnect
 
     wget
     curl
@@ -105,10 +114,16 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  # uses direnv to load a nix-shell if there is a shell.nix when entering a
+  # directory.
+  services.lorri.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -126,7 +141,7 @@
     # Enable the Gnome Desktop Environment. https://nixos.wiki/wiki/Gnome
     # TODO try Wayland instead of X11. See here: https://github.com/NixOS/nixpkgs/issues/32806#issuecomment-449987334
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome3.enable = true;
   };
 
